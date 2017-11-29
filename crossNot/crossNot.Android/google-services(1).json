@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "15971488185",
+    "firebase_url": "https://notifichepushordinemedici.firebaseio.com",
+    "project_id": "notifichepushordinemedici",
+    "storage_bucket": "notifichepushordinemedici.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15971488185:android:07cd78d86d36d221",
+        "android_client_info": {
+          "package_name": "com.ak12.ProvaNotificheXamarin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15971488185-eb6jh75qrfaumtg2oi7j9hhsftuirmtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjfpMnh6vO8-FbfiXsw2I1UZbBWstu9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15971488185:android:b507e84a47a5975a",
+        "android_client_info": {
+          "package_name": "com.notificheFirebase.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15971488185-eb6jh75qrfaumtg2oi7j9hhsftuirmtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjfpMnh6vO8-FbfiXsw2I1UZbBWstu9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15971488185:android:a76a32d82596930d",
+        "android_client_info": {
+          "package_name": "com.Ak12srl.CrossPlatformNotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15971488185-eb6jh75qrfaumtg2oi7j9hhsftuirmtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjfpMnh6vO8-FbfiXsw2I1UZbBWstu9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
