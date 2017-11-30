@@ -15,6 +15,7 @@ namespace crossNot
             InitializeComponent();
 
             MainPage = new crossNot.MainPage();
+           
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {
                 System.Diagnostics.Debug.WriteLine($"TOKEN : {p.Token}");

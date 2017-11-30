@@ -5,7 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Plugin.FirebasePushNotification;
-
+using Firebase.Analytics;
+using Firebase.InstanceID;
 namespace crossNot.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -25,6 +26,7 @@ namespace crossNot.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            Firebase.Core.App.Configure();
             FirebasePushNotificationManager.Initialize(options, true);
 
             return base.FinishedLaunching(app, options);
@@ -32,6 +34,7 @@ namespace crossNot.iOS
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
 #if DEBUG
+           
             FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken, FirebaseTokenType.Sandbox);
 #endif
 #if RELEASE
@@ -39,6 +42,8 @@ namespace crossNot.iOS
 #endif
 
         }
+
+
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
