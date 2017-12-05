@@ -7,6 +7,8 @@ using UIKit;
 using Plugin.FirebasePushNotification;
 using Firebase.Analytics;
 using Firebase.InstanceID;
+using UserNotifications;
+
 namespace crossNot.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -42,8 +44,6 @@ namespace crossNot.iOS
 #endif
 
         }
-
-
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
