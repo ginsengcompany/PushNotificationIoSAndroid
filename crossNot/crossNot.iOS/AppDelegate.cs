@@ -7,6 +7,7 @@ using UIKit;
 using Plugin.FirebasePushNotification;
 using Firebase.Analytics;
 using Firebase.InstanceID;
+using Plugin.FirebasePushNotification.Abstractions;
 using UserNotifications;
 using Xamarin.Forms;
 
@@ -29,10 +30,17 @@ namespace crossNot.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-            DependencyService.Register<crossNot.App>();
-            Firebase.Core.App.Configure();
-            FirebasePushNotificationManager.Initialize(options, true);
+            FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
+            {
+                new NotificationUserCategory("message",new List<NotificationUserAction> {
+                    new NotificationUserAction("Reply","Reply",NotificationActionType.Foreground)
+                }),
+                new NotificationUserCategory("request",new List<NotificationUserAction> {
+                    new NotificationUserAction("Accept","Accept"),
+                    new NotificationUserAction("Reject","Reject",NotificationActionType.Destructive)
+                })
 
+            });
             return base.FinishedLaunching(app, options);
         }
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
@@ -61,7 +69,7 @@ namespace crossNot.iOS
             // If you disable method swizzling, you'll need to call this method. 
             // This lets FCM track message delivery and analytics, which is performed
             // automatically with method swizzling enabled.
-            FirebasePushNotificationManager.CurrentNotificationPresentationOption = UNNotificationPresentationOptions.Alert;
+            //FirebasePushNotificationManager.CurrentNotificationPresentationOption = UNNotificationPresentationOptions.Alert;
             FirebasePushNotificationManager.DidReceiveMessage(userInfo);
             // Do your magic to handle the notification data
             System.Console.WriteLine(userInfo);
