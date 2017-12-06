@@ -16,30 +16,7 @@ namespace crossNot
 
             MainPage = new crossNot.MainPage();
 
-            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
-                {
-                    System.Diagnostics.Debug.WriteLine($"TOKEN : {p.Token}");
-                };
-                CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
-                {
-
-                    System.Diagnostics.Debug.WriteLine("Received");
-
-                };
-                CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
-                {
-                    System.Diagnostics.Debug.WriteLine("Opened");
-                    foreach (var data in p.Data)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
-                    }
-
-                    if (!string.IsNullOrEmpty(p.Identifier))
-                    {
-                        System.Diagnostics.Debug.WriteLine($"ActionId: {p.Identifier}");
-                    }
-
-                };
+       
         
     }
 
