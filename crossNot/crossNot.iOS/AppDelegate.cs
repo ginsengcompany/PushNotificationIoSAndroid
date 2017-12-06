@@ -8,6 +8,7 @@ using Plugin.FirebasePushNotification;
 using Firebase.Analytics;
 using Firebase.InstanceID;
 using UserNotifications;
+using Xamarin.Forms;
 
 namespace crossNot.iOS
 {
@@ -28,6 +29,7 @@ namespace crossNot.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            DependencyService.Register<crossNot.App>();
             Firebase.Core.App.Configure();
             FirebasePushNotificationManager.Initialize(options, true);
 
@@ -36,11 +38,10 @@ namespace crossNot.iOS
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
 #if DEBUG
-           
             FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken, FirebaseTokenType.Sandbox);
 #endif
-#if RELEASE
-                    FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken,FirebaseTokenType.Production);
+#if RELEASE || ADHOC
+            FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken, FirebaseTokenType.Production);
 #endif
 
         }
@@ -60,6 +61,7 @@ namespace crossNot.iOS
             // If you disable method swizzling, you'll need to call this method. 
             // This lets FCM track message delivery and analytics, which is performed
             // automatically with method swizzling enabled.
+            FirebasePushNotificationManager.CurrentNotificationPresentationOption = UNNotificationPresentationOptions.Alert;
             FirebasePushNotificationManager.DidReceiveMessage(userInfo);
             // Do your magic to handle the notification data
             System.Console.WriteLine(userInfo);
@@ -68,7 +70,7 @@ namespace crossNot.iOS
         public override void OnActivated(UIApplication uiApplication)
         {
             FirebasePushNotificationManager.Connect();
-
+            base.OnActivated(uiApplication);
         }
         public override void DidEnterBackground(UIApplication application)
         {
