@@ -5,7 +5,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -52,8 +51,6 @@
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
-	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowArbitraryLoads</key>
